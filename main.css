@@ -7,4 +7,84 @@ h4 {
   margin: 0 auto;
   text-align: center;
   padding: 25px;
+  color: rgb(88, 77, 119);
+}
+
+.tbl-dash {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 auto;
+  content: "";
+  height: 3px;
+  width: 100px;
+  background: -webkit-linear-gradient(
+    to right,
+    #d367c1 10%,
+    #dedf40 25%,
+    #62cb5c 50%,
+    #00bbcb 75%,
+    #ab79d6 90%
+  );
+  background: linear-gradient(
+    to right,
+    #d367c1 10%,
+    #dedf40 25%,
+    #62cb5c 50%,
+    #00bbcb 75%,
+    #ab79d6 90%
+  );
+}
+
+*,
+:before,
+:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.btn-style {
+  width: 100px;
+  height: 50px;
+  margin: 20px;
+  padding: 50px;
+  color: white !important;
+  border: 1px solid rgb(247, 202, 202) !important;
+  color: white;
+  border-radius: 50%;
+  background: -webkit-linear-gradient(
+    to right,
+    #ffa2b9 10%,
+    #e7e7a6 25%,
+    #a5eba2 50%,
+    #9de1e7 75%,
+    #c593f1 90%
+  );
+  background: linear-gradient(
+    to right,
+    #ffa2b9 10%,
+    #e7e7a6 25%,
+    #a5eba2 50%,
+    #9de1e7 75%,
+    #c593f1 90%
+  );
+}
+
+.btn-style:hover {
+  color: rgb(86, 92, 128) !important;
+  background: -webkit-linear-gradient(
+    to right,
+    #fc7889 10%,
+    #ffff7b 25%,
+    #7bffd7 50%,
+    #75dfff 75%,
+    #956fff 90%
+  );
+  background: linear-gradient(
+    to right,
+    #fc7889 10%,
+    #ffff7b 25%,
+    #7bffd7 50%,
+    #75dfff 75%,
+    #956fff 90%
+  );
 }
