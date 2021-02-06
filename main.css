@@ -1,0 +1,10 @@
+body,
+h1,
+h3,
+h4 {
+  font-family: "Bungee Shade", "Press Start 2P", Helvetica, sans-serif;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 25px;
+}
