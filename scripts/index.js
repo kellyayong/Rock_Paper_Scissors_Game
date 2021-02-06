@@ -8,12 +8,20 @@ let computer = [
 let choices = ["rock", "paper", "scissors"];
 
 player.currentChoice = choices[2];
-computer.currentChoice = choices[2];
 
 let outcome = [];
 let lost = "Player lost!";
 let won = "Player won!";
 let tie = "It's a tie.";
+
+function compRandom() {
+    let randomIndex = Math.floor(Math.random()*choices.length);
+    computer.currentChoice = choices[randomIndex];
+    return computer.currentChoice;
+}
+
+console.log(compRandom());
+compRandom();
 
 function playGame() {
     if (player.currentChoice === computer.currentChoice) {
