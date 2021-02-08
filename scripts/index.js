@@ -24,29 +24,43 @@ function compareChoices() {
     if (player.currentChoice === computer.currentChoice) {
         const text = "It's a tie! Player choose " + player.currentChoice + " and the computer choose "+ computer.currentChoice; 
         writeResult(text);
+        const roundResult = 'tie';
+        updateRoundResult(roundResult);
     } else if (player.currentChoice === choices[0]) {
         if (computer.currentChoice === choices[1]) {
             const text = "Player lost! Player choose " + player.currentChoice + " and the computer choose "+ computer.currentChoice;
             writeResult(text);
+            const roundResult = 'lost';
+            updateRoundResult(roundResult);
         } else {
             const text = "Player won! Player choose " + player.currentChoice + " and the computer choose "+ computer.currentChoice;
             writeResult(text);
+            const roundResult = 'won';
+            updateRoundResult(roundResult);
         }
     } else if (player.currentChoice === choices[1]) {
         if (computer.currentChoice === choices[0]) {
             const text = "Player won! Player choose " + player.currentChoice + " and the computer choose "+ computer.currentChoice;
             writeResult(text);
+            const roundResult = 'won';
+            updateRoundResult(roundResult);
         } else {
             const text = "Player lost! Player choose " + player.currentChoice + " and the computer choose "+ computer.currentChoice;
             writeResult(text);
+            const roundResult = 'lost';
+            updateRoundResult(roundResult);
         }
     } else if (player.currentChoice === choices[2]) {
         if (computer.currentChoice === choices[0]) {
             const text = "Player lost! Player choose " + player.currentChoice + " and the computer choose "+ computer.currentChoice;
             writeResult(text);
+            const roundResult = 'lost';
+            updateRoundResult(roundResult);
         } else {
             const text = "Player won! Player choose " + player.currentChoice + " and the computer choose "+ computer.currentChoice;
             writeResult(text);
+            const roundResult = 'won';
+            updateRoundResult(roundResult);
         }
     }
 };
@@ -67,3 +81,22 @@ function playerChoose(e) {
     compareChoices();
 };
 
+
+let playerScore = 0;
+let computerScore = 0;
+
+function updateRoundResult(roundResult) {
+    if (playerScore < 5 && computerScore < 5) {
+        if (roundResult === "won") {
+            playerScore += 1;
+        } else if (roundResult === "lost") {
+            computerScore += 1;
+        }
+    } else if (playerScore = 5) {
+        const text = "Congrats! Player won against the Computer"
+        writeResult(text);
+    } else if (computerScore = 5) {
+        const text = "Better luck next time. The Computer won"
+        writeResult(text);
+    }
+}
