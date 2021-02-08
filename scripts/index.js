@@ -92,23 +92,37 @@ let playerScore = 0;
 let computerScore = 0;
 
 function updateRoundResult(roundResult) {
-    if (playerScore < 5 && computerScore < 5) {
+    if (playerScore < 4 && computerScore < 4) {
         if (roundResult === "won") {
             playerScore += 1;
+            writeScoreCount();
         } else if (roundResult === "lost") {
             computerScore += 1;
+            writeScoreCount();
         }
     } else if (playerScore = 5) {
         const text = "Congrats! Player won against the Computer"
         clearScreen();
         writeResult(text);
+        writeScoreCount();
         playerScore = 0;
         computerScore = 0;
+
     } else if (computerScore = 5) {
         const text = "Better luck next time. The Computer won"
         clearScreen();
         writeResult(text);
+        writeScoreCount();
         playerScore = 0;
         computerScore = 0;
     }
+
 }
+
+
+function writeScoreCount() {
+    const playerScoreCount = document.querySelector('.playerScoreCount');
+    const computerScoreCount = document.querySelector('.computerScoreCount');
+    playerScoreCount.innerText = playerScore;
+    computerScoreCount.innerText = computerScore;
+};

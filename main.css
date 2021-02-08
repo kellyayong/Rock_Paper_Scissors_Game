@@ -6,24 +6,27 @@ h4 {
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  padding: 25px;
+  padding: 20px;
   color: rgb(88, 77, 119);
 }
 
-p {
+p,
+h6 {
   font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
   font-size: 16px;
   width: 600px;
   margin: 0 auto;
   text-align: center;
+  padding: 20px;
 }
 
 .tbl-dash {
   display: inline-block;
   vertical-align: middle;
   margin: 0 auto;
+  margin: 0 20px;
   content: "";
-  height: 3px;
+  height: 2px;
   width: 100px;
   background: -webkit-linear-gradient(
     to right,
@@ -95,6 +98,42 @@ p {
     #75dfff 75%,
     #956fff 90%
   );
+}
+
+.container {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: column nowrap;
+  width: 600px;
+}
+
+.scoreTitle {
+  flex: 1 0 100%;
+  justify-items: center;
+  margin: 0 auto -15px;
+}
+
+h4,
+h6 {
+  width: 250px;
+  height: 50px;
+}
+
+.score {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  flex: 1 auto 100%;
+  margin-bottom: 20px;
+}
+
+.playerScoreCount,
+.computerScoreCount {
+  border: 1px solid rgb(255, 230, 234);
 }
 
 /*
