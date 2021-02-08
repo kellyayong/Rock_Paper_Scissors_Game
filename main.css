@@ -10,6 +10,14 @@ h4 {
   color: rgb(88, 77, 119);
 }
 
+p {
+  font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .tbl-dash {
   display: inline-block;
   vertical-align: middle;

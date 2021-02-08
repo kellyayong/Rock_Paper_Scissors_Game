@@ -25,34 +25,50 @@ compareChoices();
 function compareChoices() {
     computerChoose();
     if (player.currentChoice === computer.currentChoice) {
-        console.log(tie);
-        return tie;
+        const text = "It's a tie! Player choose " + player.currentChoice + " and the computer choose "+ computer.currentChoice; 
+        console.log(text);
+        writeResult(text);
     } else if (player.currentChoice === choices[0]) {
         if (computer.currentChoice === choices[1]) {
-            console.log(lost);
-            return lost;
+            const text = "Player lost! Player choose " + player.currentChoice + " and the computer choose "+ computer.currentChoice;
+            console.log(text);
+            writeResult(text);
         } else {
-            console.log(won);
-            return won;
+            const text = "Player won! Player choose " + player.currentChoice + " and the computer choose "+ computer.currentChoice;
+            console.log(text);
+            writeResult(text);
         }
     } else if (player.currentChoice === choices[1]) {
         if (computer.currentChoice === choices[0]) {
-            console.log(won);
-            return won;
+            const text = "Player won! Player choose " + player.currentChoice + " and the computer choose "+ computer.currentChoice;
+            console.log(text);
+            writeResult(text);
         } else {
-            console.log(lost);
-            return lost;
+            const text = "Player lost! Player choose " + player.currentChoice + " and the computer choose "+ computer.currentChoice;
+            console.log(text);
+            writeResult(text);
         }
     } else if (player.currentChoice === choices[2]) {
         if (computer.currentChoice === choices[0]) {
-            console.log(lost);
-            return lost;
+            const text = "Player lost! Player choose " + player.currentChoice + " and the computer choose "+ computer.currentChoice;
+            console.log(text);
+            writeResult(text);
         } else {
-            console.log(won);
-            return won;
+            const text = "Player won! Player choose " + player.currentChoice + " and the computer choose "+ computer.currentChoice;
+            console.log(text);
+            writeResult(text);
         }
     }
 };
+
+function writeResult(text) {
+    const divResult = document.querySelector(".result");
+    const result = document.createElement('p');
+    result.innerText = text;
+    divResult.appendChild(result);
+}
+
+
 
 
 document.querySelector('#rock').addEventListener('click', playerChoose);
@@ -62,7 +78,7 @@ document.querySelector('#scissors').addEventListener('click', playerChoose);
 
 function playerChoose(e) {
     player.currentChoice = e.target.innerText;
-    console.log("Player chooses "+player.currentChoice);
+    console.log("Player chooses " + player.currentChoice);
     compareChoices();
 };
 
