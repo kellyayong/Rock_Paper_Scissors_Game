@@ -1,11 +1,11 @@
-let player = [
-    currentChoice= null
-];
-let computer = [
-    currentChoice= null
-];
+const player = {
+    currentChoice: null
+};
+const computer = {
+    currentChoice: null
+};
 
-let choices = ["rock", "paper", "scissors"];
+const choices = ["rock", "paper", "scissors"];
 
 player.currentChoice = choices[2];
 
@@ -14,16 +14,16 @@ let lost = "Player lost!";
 let won = "Player won!";
 let tie = "It's a tie.";
 
-function compRandom() {
-    let randomIndex = Math.floor(Math.random()*choices.length);
+function computerChoose() {
+    const randomIndex = Math.floor(Math.random()*choices.length);
     computer.currentChoice = choices[randomIndex];
-    return computer.currentChoice;
+    console.log("computer chooses "+computer.currentChoice);
 }
 
-console.log(compRandom());
-compRandom();
+compareChoices();
 
-function playGame() {
+function compareChoices() {
+    computerChoose();
     if (player.currentChoice === computer.currentChoice) {
         console.log(tie);
         return tie;
@@ -54,6 +54,15 @@ function playGame() {
     }
 };
 
-playGame();
 
+document.querySelector('#rock').addEventListener('click', playerChoose);
+document.querySelector('#paper').addEventListener('click', playerChoose);
+document.querySelector('#scissors').addEventListener('click', playerChoose);
+
+
+function playerChoose(e) {
+    player.currentChoice = e.target.innerText;
+    console.log("Player chooses "+player.currentChoice);
+    compareChoices();
+};
 
