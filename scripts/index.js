@@ -5,7 +5,7 @@ const computer = {
     currentChoice: null
 };
 
-const choices = ["rock", "paper", "scissors"];
+const choices = ["Rock", "Paper", "Scissors"];
 
 player.currentChoice = choices[2];
 
