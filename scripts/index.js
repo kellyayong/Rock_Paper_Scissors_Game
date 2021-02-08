@@ -68,8 +68,14 @@ function compareChoices() {
 function writeResult(text) {
     const divResult = document.querySelector(".result");
     const result = document.createElement('p');
+    result.setAttribute("class", "newResult");
     result.innerText = text;
     divResult.appendChild(result);
+}
+
+function clearScreen() {
+    const newResult = document.querySelector('p');
+    newResult.remove();
 }
 
 document.querySelector('#rock').addEventListener('click', playerChoose);
@@ -77,10 +83,10 @@ document.querySelector('#paper').addEventListener('click', playerChoose);
 document.querySelector('#scissors').addEventListener('click', playerChoose);
 
 function playerChoose(e) {
+    clearScreen();
     player.currentChoice = e.target.innerText;
     compareChoices();
 };
-
 
 let playerScore = 0;
 let computerScore = 0;
@@ -94,9 +100,15 @@ function updateRoundResult(roundResult) {
         }
     } else if (playerScore = 5) {
         const text = "Congrats! Player won against the Computer"
+        clearScreen();
         writeResult(text);
+        playerScore = 0;
+        computerScore = 0;
     } else if (computerScore = 5) {
         const text = "Better luck next time. The Computer won"
+        clearScreen();
         writeResult(text);
+        playerScore = 0;
+        computerScore = 0;
     }
 }
