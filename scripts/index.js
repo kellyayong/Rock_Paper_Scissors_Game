@@ -105,16 +105,13 @@ function updateRoundResult(roundResult) {
         clearScreen();
         writeResult(text);
         writeScoreCount();
-        playerScore = 0;
-        computerScore = 0;
-
+        endgame()
     } else if (computerScore = 5) {
         const text = "Better luck next time. The Computer won"
         clearScreen();
         writeResult(text);
         writeScoreCount();
-        playerScore = 0;
-        computerScore = 0;
+        endgame()
     }
 
 }
@@ -126,3 +123,48 @@ function writeScoreCount() {
     playerScoreCount.innerText = playerScore;
     computerScoreCount.innerText = computerScore;
 };
+
+function endgame() {
+    hideButtons();
+    createRetryButton();
+}
+
+function createRetryButton() {
+    const divButton = document.querySelector('.buttons');
+    const retryButton = document.createElement('button');
+    retryButton.setAttribute('class', 'retryButton');
+    retryButton.innerHTML = "Try Again?";
+    retryButton.onclick = restart;
+    divButton.appendChild(retryButton);
+}
+
+function showButtons() {
+    const rockButton = document.querySelector('#rock');
+    const paperButton = document.querySelector('#paper');
+    const scissorsButton = document.querySelector('#scissors');
+    rockButton.style.display = '';
+    paperButton.style.display = '';
+    scissorsButton.style.display = '';
+}
+
+function hideButtons() {
+    const rockButton = document.querySelector('#rock');
+    const paperButton = document.querySelector('#paper');
+    const scissorsButton = document.querySelector('#scissors');
+    rockButton.style.display = 'none';
+    paperButton.style.display = 'none';
+    scissorsButton.style.display = "none";
+}
+
+function restart() {
+    playerScore = 0;
+    computerScore = 0;
+    writeScoreCount();
+    console.log("restart game");
+    showButtons();
+    const retryButton = document.querySelector('.retryButton');
+    retryButton.remove();
+    const text = "New Game"
+    clearScreen();
+    writeResult(text);
+}
