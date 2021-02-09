@@ -6,8 +6,12 @@ h4 {
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   color: rgb(88, 77, 119);
+}
+
+h1 {
+  padding: 60px 5px 30px 5px;
 }
 
 p,
@@ -112,7 +116,7 @@ h6 {
 .scoreTitle {
   flex: 1 0 100%;
   justify-items: center;
-  margin: 0 auto -15px;
+  margin: 0 auto -5px;
 }
 
 h4,
