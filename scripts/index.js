@@ -132,7 +132,7 @@ function endgame() {
 function createRetryButton() {
     const divButton = document.querySelector('.buttons');
     const retryButton = document.createElement('button');
-    retryButton.setAttribute('class', 'retryButton');
+    retryButton.setAttribute('class', 'retryButton btn btn-style');
     retryButton.innerHTML = "Try Again?";
     retryButton.onclick = restart;
     divButton.appendChild(retryButton);
